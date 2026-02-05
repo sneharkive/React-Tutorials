@@ -128,7 +128,7 @@ useEffect(() => {
   async function fetchData() {
     const data = await fetch(API_URL);
     const json = await data.json();
-    setListOfProduct(json);
+    setProductList(json);
   }
   fetchData();
 }, []);
@@ -136,10 +136,10 @@ useEffect(() => {
 
 ### What Happens Internally
 
-1. Component renders with empty data (here i have Constant.js data)
+1. Component renders with empty data
 2. `useEffect` runs after render
 3. API call completes
-4. `setListOfProduct()` updates state
+4. `setProductList()` updates state
 5. React re-renders component
 6. UI shows fetched products
 
@@ -148,7 +148,7 @@ useEffect(() => {
 ## 7. Lifecycle Mental Model (Very Important)
 
 ```
-Initial Render (empty / loading UI / Constant.js Data)
+Initial Render (empty / loading UI)
         ↓
 useEffect runs (API call)
         ↓

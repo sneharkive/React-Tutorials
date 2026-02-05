@@ -1,5 +1,3 @@
-import React from "react";
-import products from "./Constant";
 
 const Product = ({ product, index }) => {
   return (
