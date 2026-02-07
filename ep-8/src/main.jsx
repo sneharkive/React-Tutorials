@@ -8,6 +8,7 @@ import KidCard from "./components/KidCard";
 import ProductCard from './components/ProductCard';
 import ProductDetails from './components/ProductDetails';
 import About from "./components/About";
+import GithubProfileClass from "./components/GithubProfileClass";
 
 // const appRouter = createBrowserRouter([
 //   {
@@ -35,6 +36,7 @@ const appRouter = createBrowserRouter([{
     // { path: "/men", element: <Men /> },
     { path: "/kids", element: <KidCard /> },
     { path: "/about", element: <About /> },
+    { path: "/github", element: <GithubProfileClass /> },
     { path: "/product/:productId", element: <ProductDetails /> },
 
   ],
