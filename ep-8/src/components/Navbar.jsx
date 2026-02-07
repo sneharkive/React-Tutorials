@@ -5,7 +5,7 @@ export const Navbar = () => {
   const [modeName, setModeName] = React.useState("Light");
   return (
     <div className='flex justify-between p-4 bg-zinc-700 border-b-2'>
-      <h1>LOGO</h1>
+      <Link to="/">LOGO</Link>
       <ul className='flex gap-4'>
         <li><Link to="/men">MEN</Link></li>
         <li><Link to="/women">WOMEN</Link></li>

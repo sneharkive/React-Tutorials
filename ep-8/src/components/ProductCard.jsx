@@ -3,7 +3,6 @@ import SkeletonCard from "./SkeletonCard";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-
 const ProductCard = () => {
   const [productList, setProductList] = useState([]);
   const [filteredProduct, setFilteredProduct] = useState([]);
@@ -22,6 +21,15 @@ const ProductCard = () => {
       // console.log(jsonData);
       setProductList(jsonData);
       setFilteredProduct(jsonData);
+
+      // const timer = setInterval(() => {
+      //   console.log("Functional Component Timer");
+      // }, 1000);
+      // return () => {
+      //   // cleanup
+      //   clearInterval(timer);
+      // };
+      
     }
     fetchData();
   }, []);
