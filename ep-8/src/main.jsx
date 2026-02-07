@@ -5,7 +5,8 @@ import App from "./App";
 import "./index.css";
 import Error from "./components/Error";
 import KidCard from "./components/KidCard";
-import ProductCard from './components/ProductCard'
+import ProductCard from './components/ProductCard';
+import ProductDetails from './components/ProductDetails';
 
 // const appRouter = createBrowserRouter([
 //   {
@@ -28,8 +29,11 @@ const appRouter = createBrowserRouter([{
   errorElement: <Error />,
   children: [
     { path: "/", element: <ProductCard /> },
+    // { path: "/product", element: <ProductCard /> },
     // { path: "/men", element: <Men /> },
     { path: "/kids", element: <KidCard /> },
+    { path: "/product/:productId", element: <ProductDetails /> },
+
   ],
 }]);
 

@@ -13,9 +13,9 @@ const Product = ({ product, index }) => {
         <h3 className="font-bold text-lg h-12 overflow-hidden mb-4">
           {product.title}
         </h3>
-        <p className="text-zinc-400 h-28 overflow-hidden">
+        {/* <p className="text-zinc-400 h-28 overflow-hidden">
           {product.description}
-        </p>
+        </p> */}
         <div className="flex items-center justify-between">
           <p className="text-zinc-300 font-semibold mt-2">${product.price}</p>
           <p className="text-zinc-300 font-semibold mt-2">

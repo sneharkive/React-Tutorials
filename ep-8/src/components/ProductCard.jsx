@@ -1,13 +1,13 @@
 import Product from "./Product";
 import SkeletonCard from "./SkeletonCard";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
 
 const ProductCard = () => {
   const [productList, setProductList] = useState([]);
   const [filteredProduct, setFilteredProduct] = useState([]);
   const [searchText, setSearchText] = useState("");
-
 
   const toRatedProduct = () => {
     const topRated = productList.filter((prod) => prod.rating.rate >= 4.4);
@@ -19,6 +19,7 @@ const ProductCard = () => {
     async function fetchData() {
       const data = await fetch("https://fakestoreapi.com/products");
       const jsonData = await data.json();
+      // console.log(jsonData);
       setProductList(jsonData);
       setFilteredProduct(jsonData);
     }
@@ -66,8 +67,10 @@ const ProductCard = () => {
         </div>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
-        {filteredProduct.map((prod, index) => (
-          <Product key={index} product={prod} />
+        {filteredProduct.map((product) => (
+          <Link to={`/product/${product.id}`} key={product.id}>
+            <Product product={product} />
+          </Link>
         ))}
       </div>
     </div>
