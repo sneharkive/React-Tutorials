@@ -7,9 +7,15 @@ class ProfileClass extends React.Component {
       count: 0,
       count2: 100,
     };
+    console.log("Child ctr is called");
+  }
+
+  componentDidMount() {
+    console.log("Child componentDidMount is called");
   }
 
   render() {
+    console.log("Child Render is called");
     return (
       <div className="p-8">
         <h1 className="text-2xl border-b-2 mb-4 px-2">
