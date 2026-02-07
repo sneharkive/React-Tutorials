@@ -7,6 +7,7 @@ import Error from "./components/Error";
 import KidCard from "./components/KidCard";
 import ProductCard from './components/ProductCard';
 import ProductDetails from './components/ProductDetails';
+import About from "./components/About";
 
 // const appRouter = createBrowserRouter([
 //   {
@@ -23,6 +24,7 @@ import ProductDetails from './components/ProductDetails';
 
 // to use outlet we have to nest the routes like below
 // to get Navbar on every page using outlet
+
 const appRouter = createBrowserRouter([{
   path: "/",
   element: <App />,
@@ -32,6 +34,7 @@ const appRouter = createBrowserRouter([{
     // { path: "/product", element: <ProductCard /> },
     // { path: "/men", element: <Men /> },
     { path: "/kids", element: <KidCard /> },
+    { path: "/about", element: <About /> },
     { path: "/product/:productId", element: <ProductDetails /> },
 
   ],

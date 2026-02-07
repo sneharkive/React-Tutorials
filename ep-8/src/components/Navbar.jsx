@@ -10,6 +10,7 @@ export const Navbar = () => {
         <li><Link to="/men">MEN</Link></li>
         <li><Link to="/women">WOMEN</Link></li>
         <li><Link to="/kids">KIDS</Link></li>
+        <li><Link to="/about">ABOUT</Link></li>
       </ul>
       
       {/* I will change itemNum value according to how many products add to cart */}
