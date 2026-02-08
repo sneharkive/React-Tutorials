@@ -1,17 +1,19 @@
 import Product from "./Product";
 import SkeletonCard from "./SkeletonCard";
-import { useState, useEffect } from "react";
+import UserContext from "../utils/UserContext.js";
+import { useState, useEffect, useContext, use } from "react";
 import { Link } from "react-router-dom";
 import { withBestSeller } from "./Product";
 
 const ProductCard = () => {
   const [productList, setProductList] = useState([]);
   const [filteredProduct, setFilteredProduct] = useState([]);
-  const [searchText, setSearchText] = useState("");
+  const user = useContext(UserContext);
+
 
   const toRatedProduct = () => {
     const topRated = productList.filter((prod) => prod.rating.rate >= 4.4);
-    setProductList(topRated);
+    setFilteredProduct(topRated);
   };
 
   useEffect(() => {
@@ -23,13 +25,6 @@ const ProductCard = () => {
     }
     fetchData();
   }, []);
-
-  const searchProducts = () => {
-    const filtered = productList.filter((prod) =>
-      prod.title.toLowerCase().includes(searchText.toLowerCase()),
-    );
-    setFilteredProduct(filtered);
-  };
 
 
   const ProductWithBestSeller = withBestSeller(Product);
@@ -47,25 +42,13 @@ const ProductCard = () => {
           Top Rated Product
         </button>
 
-
-        <div className="flex items-center">
-          <input
-            className="bg-zinc-700 px-4 py-2 rounded-2xl outline-0 text-white"
-            type="text"
-            placeholder="Search products..."
-            value={searchText}
-            onChange={(e) => setSearchText(e.target.value)}
-          />
-          <button
-            onClick={searchProducts}
-            className="cursor-pointer bg-blue-600 text-xl text-white px-4 py-1 rounded hover:bg-blue-700 transition ml-2"
-          >
-            Search
-          </button>
-        </div>
+        <input
+          className="bg-zinc-700 px-4 py-2 rounded-2xl outline-0 text-white"
+          type="text"
+          value={user.name}
+          onChange={(e) => user.setName(e.target.value)}
+        />
       </div>
-
-
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
         {filteredProduct.map((product) => (
