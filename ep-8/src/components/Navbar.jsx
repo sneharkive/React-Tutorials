@@ -12,6 +12,7 @@ export const Navbar = () => {
         <li><Link to="/kids">KIDS</Link></li>
         <li><Link to="/about">ABOUT</Link></li>
         <li><Link to="/github">GITHUB</Link></li>
+        <li><Link to="/grocery">GROCERY</Link></li>
       </ul>
       
       {/* I will change itemNum value according to how many products add to cart */}
