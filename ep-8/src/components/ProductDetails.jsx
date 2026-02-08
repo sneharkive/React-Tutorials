@@ -2,22 +2,24 @@ import { useEffect, useState } from "react";
 
 import { useParams } from "react-router-dom";
 import SkeletonCard from "./SkeletonCard";
+import useGetSingleProduct from "../hook/useGetSingleProduct";
 
 const ProductDetails = () => {
-  const [singleProduct, setSingleProduct] = useState(null);
   const { productId } = useParams();
+  const singleProduct = useGetSingleProduct(productId);
 
-  useEffect(() => {
-    async function fetchData() {
-      const data = await fetch(
-        `https://fakestoreapi.com/products/${productId}`,
-      );
-      const jsonData = await data.json();
-      // console.log(jsonData);
-      setSingleProduct(jsonData);
-    }
-    fetchData();
-  }, []);
+  // this is the code that was moved to the custom hook useGetSingleProduct.js
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     const data = await fetch(
+  //       `https://fakestoreapi.com/products/${productId}`,
+  //     );
+  //     const jsonData = await data.json();
+  //     // console.log(jsonData);
+  //     setSingleProduct(jsonData);
+  //   }
+  //   fetchData();
+  // }, []);
 
   return singleProduct === null ? (
     <SkeletonCard />
