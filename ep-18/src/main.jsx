@@ -4,7 +4,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import "./index.css";
 import Error from "./components/Error";
-import KidCard from "./components/KidCard";
+import Kids from "./components/Kids";
+import Men from "./components/Men";
 import ProductCard from "./components/ProductCard";
 import ProductDetails from "./components/ProductDetails";
 
@@ -16,7 +17,8 @@ const appRouter = createBrowserRouter([
     errorElement: <Error />,
     children: [
       { path: "/", element: <ProductCard /> },
-      { path: "/kids", element: <KidCard /> },
+      { path: "/kids", element: <Kids /> },
+      { path: "/men", element: <Men /> },
       { path: "/product/:productId", element: <ProductDetails /> },
     ],
   },
