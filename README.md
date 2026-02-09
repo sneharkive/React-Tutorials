@@ -174,7 +174,7 @@ Bundlers solve all of this automatically.
 Parcel:
 
 * Bundles files
-* Transpiles JS using Babel
+* Transpile JS using Babel
 * Enables Hot Module Replacement (HMR)
 * Optimizes assets
 * Does tree shaking
